@@ -1,4 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */ import HeroCarousel from "./homepage/HeroCarousel";import StoreOutlinedIcon from "@mui/icons-material/StoreOutlined";function Hero() {	return (
+/* eslint-disable react/no-unescaped-entities */ import HeroCarousel from "./homepage/HeroCarousel";
+import StoreOutlinedIcon from "@mui/icons-material/StoreOutlined";
+function Hero() {
+	return (
 		<>
 			<section className="pt-16 sm:pt-44 bg-white">
 				<div className="px-4 mx-auto max-w-7xl">
