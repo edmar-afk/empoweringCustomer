@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Schedule from "../components/Schedule";
 import Owners from "../components/Owners";
+import Fab from "../components/Fab";
 function Homepage() {
 	return (
 		<>
@@ -12,7 +13,7 @@ function Homepage() {
 			<Schedule />
 			<Owners/>
 			<Footer />
-			
+			<Fab/>
 		</>
 	);
 }

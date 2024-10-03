@@ -1,21 +1,26 @@
-import ThreePIcon from "@mui/icons-material/ThreeP";import ChatBotDrawer from "./ChatBotDrawer";import { useState } from "react";
+import ThreePIcon from "@mui/icons-material/ThreeP";import { useState } from "react";
+import Chatbot from "./Chatbot";
+
 function Fab() {
 	const [isChatBotOpen, setChatBotOpen] = useState(false);
 
-	const showChatBot = () => {
-		setChatBotOpen(true); // Open the drawer
+	// Toggle function to open/close the chatbot
+	const toggleChatBot = () => {
+		setChatBotOpen((prev) => !prev); // Toggle the state
 	};
-  return (
+
+	return (
 		<>
 			<div
-				onClick={showChatBot}
-				className="fixed bg-purple-700 p-4 bottom-8 right-8 text-white rounded-full shadow-xl animate-bounce cursor-pointer">
+				onClick={toggleChatBot} // Use the toggle function here
+				className="fixed bg-green-700 p-4 bottom-8 right-8 text-white rounded-full shadow-xl animate-bounce cursor-pointer">
 				<ThreePIcon fontSize="large" />
 			</div>
-			<ChatBotDrawer
-				isOpen={isChatBotOpen}
+			<Chatbot
+				isChatBotOpen={isChatBotOpen}
 				setIsOpen={setChatBotOpen}
-			/>
+			/>{" "}
+			{/* Pass the setter function here */}
 		</>
 	);
 }

@@ -1,9 +1,10 @@
-/* eslint-disable react/prop-types */import { motion } from "framer-motion";
+/* eslint-disable react/prop-types */ import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { questions } from "../../assets/data";
 import api from "../../assets/api";
 import Sender from "../chatbot/Sender";
 import Receiver from "../chatbot/Receiver";
+import SendIcon from "@mui/icons-material/Send";
 
 function Choices({ animate }) {
 	const [conversation, setConversation] = useState([]); // State to store conversation
@@ -58,7 +59,7 @@ function Choices({ animate }) {
 		<>
 			<div className="relative">
 				<motion.div
-					className="flex flex-row justify-evenly flex-wrap mt-14"
+					className="flex flex-row justify-evenly flex-wrap mt-14 w-full"
 					initial="hidden"
 					animate={animate ? "visible" : "hidden"}
 					variants={{
@@ -76,7 +77,7 @@ function Choices({ animate }) {
 					{questions.map((question, index) => (
 						<motion.p
 							key={question.id}
-							className="bg-purple-700 mb-6 text-white py-6 px-4 rounded-xl w-[150px] text-center flex items-center justify-center shadow-2xl cursor-pointer"
+							className="bg-green-700 mb-6 text-white py-6 px-4 rounded-xl w-[150px] text-center flex items-center justify-center shadow-2xl cursor-pointer"
 							initial={{ x: -100, opacity: 0 }}
 							animate={{
 								x: animate ? 0 : -100,
@@ -96,7 +97,7 @@ function Choices({ animate }) {
 				</motion.div>
 
 				{/* Display the conversation between user and bot */}
-				<div className="conversation-stack mt-8 mb-24">
+				<div className="conversation-stack flex flex-col overflow-y-scroll mb-6 pt-14 h-[450px]">
 					{conversation.map((message, index) =>
 						message.type === "user" ? (
 							<Sender
@@ -116,13 +117,11 @@ function Choices({ animate }) {
 					<div ref={bottomRef} />
 				</div>
 
-				<div className="fixed bottom-0 w-full h-24 bg-gradient-to-t from-purple-800"></div>
-
 				{/* Input field for sending message */}
-				<div className="sticky bottom-4 w-[95%] mx-auto bg-white flex px-1 py-1 rounded-full border border-purple-500 overflow-hidden font-[sans-serif]">
+				<div className="sticky bottom-4 w-[95%] mx-auto bg-white flex px-1 py-1  border border-green-500 overflow-hidden font-[sans-serif]">
 					<input
 						type="text"
-						placeholder="Ask something..."
+						placeholder="Ask me..."
 						className="w-full outline-none bg-white pl-4 text-sm"
 						value={inputMessage}
 						onChange={(e) => setInputMessage(e.target.value)} // Update input field
@@ -132,10 +131,10 @@ function Choices({ animate }) {
 					/>
 					<button
 						type="button"
-						className="bg-purple-600 hover:bg-purple-700 transition-all text-white text-sm rounded-full px-5 py-2.5"
+						className="bg-white transition-all text-white text-sm px-2 py-2.5"
 						onClick={handleSendMessage} // Send message on click
 					>
-						Send
+						<SendIcon className="text-green-600"/>
 					</button>
 				</div>
 			</div>
