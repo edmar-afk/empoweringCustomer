@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */ import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+/* eslint-disable react/prop-types */ import { motion } from "framer-motion";import { useState, useRef, useEffect } from "react";
 import { questions } from "../../assets/data";
 import api from "../../assets/api";
 import Sender from "../chatbot/Sender";
@@ -18,16 +17,9 @@ function Choices({ animate }) {
 		setConversation((prevConversation) => [...prevConversation, { type: "user", content: question, timeSent }]);
 
 		try {
-			const token = localStorage.getItem("authToken"); // Get token from localStorage (or wherever it's stored)
-			const result = await api.post(
-				"/api/chatbot/",
-				{ question },
-				{
-					headers: {
-						Authorization: `Bearer ${token}`, // Add token to the headers
-					},
-				}
-			);
+			// No Authorization header needed
+			const result = await api.post("/api/chatbot/", { question });
+
 			// Add the bot's response to the conversation with time sent
 			setConversation((prevConversation) => [
 				...prevConversation,
@@ -41,6 +33,7 @@ function Choices({ animate }) {
 			]);
 		}
 	};
+
 
 	// Handle sending the message from the input field
 	const handleSendMessage = () => {

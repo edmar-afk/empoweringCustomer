@@ -13,7 +13,7 @@ const Chatbot = ({ isChatBotOpen, setIsOpen }) => {
 		<AnimatePresence>
 			{isChatBotOpen && (
 				<motion.div
-					className="fixed w-[350px] h-[70%] overflow-hidden bottom-0 sm:bottom-32 right-3 sm:right-8 bg-white z-50 shadow-2xl rounded-xl"
+					className="fixed w-[350px] h-[600px] overflow-hidden bottom-0 sm:bottom-32 right-3 sm:right-8 bg-white z-50 shadow-2xl rounded-xl"
 					initial="hidden"
 					animate="visible"
 					exit="hidden"
