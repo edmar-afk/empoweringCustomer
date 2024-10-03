@@ -1,6 +1,5 @@
-import ThreePIcon from "@mui/icons-material/ThreeP";import { useState } from "react";
-import Chatbot from "./Chatbot";
-
+import { useState } from "react";import Chatbot from "./Chatbot";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 function Fab() {
 	const [isChatBotOpen, setChatBotOpen] = useState(false);
 
@@ -14,7 +13,7 @@ function Fab() {
 			<div
 				onClick={toggleChatBot} // Use the toggle function here
 				className="fixed bg-green-700 p-4 bottom-8 right-8 text-white rounded-full shadow-xl animate-bounce cursor-pointer">
-				<ThreePIcon fontSize="large" />
+				<HelpOutlineOutlinedIcon fontSize="large" />
 			</div>
 			<Chatbot
 				isChatBotOpen={isChatBotOpen}
