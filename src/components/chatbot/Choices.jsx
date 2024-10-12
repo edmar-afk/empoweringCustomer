@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */ import { motion } from "framer-motion";import { useState, useRef, useEffect } from "react";
+/* eslint-disable no-unused-vars *//* eslint-disable react/prop-types */
+import { useState, useRef, useEffect } from "react";
 import { questions } from "../../assets/data";
 import api from "../../assets/api";
 import Sender from "../chatbot/Sender";
@@ -8,6 +9,8 @@ import SendIcon from "@mui/icons-material/Send";
 function Choices({ animate }) {
 	const [conversation, setConversation] = useState([]); // State to store conversation
 	const [inputMessage, setInputMessage] = useState(""); // State for the input field
+	const [loading, setLoading] = useState(false); // Loading state for bot response
+	const [errorMessage, setErrorMessage] = useState(""); // Error message state
 	const bottomRef = useRef(null); // Reference for the bottom of the conversation
 
 	const handleQuestionClick = async (question) => {
@@ -15,6 +18,9 @@ function Choices({ animate }) {
 
 		// Add the user's question to the conversation
 		setConversation((prevConversation) => [...prevConversation, { type: "user", content: question, timeSent }]);
+
+		setLoading(true); // Start loading state for bot response
+		setErrorMessage(""); // Clear any previous error message
 
 		try {
 			// No Authorization header needed
@@ -27,13 +33,15 @@ function Choices({ animate }) {
 			]);
 		} catch (error) {
 			console.error(error);
+			setErrorMessage("Failed to fetch bot response. Please try again.");
 			setConversation((prevConversation) => [
 				...prevConversation,
 				{ type: "bot", content: "Error fetching response", timeSent: new Date().toLocaleTimeString() },
 			]);
+		} finally {
+			setLoading(false); // End loading state
 		}
 	};
-
 
 	// Handle sending the message from the input field
 	const handleSendMessage = () => {
@@ -51,46 +59,8 @@ function Choices({ animate }) {
 	return (
 		<>
 			<div className="relative">
-				<motion.div
-					className="flex flex-row justify-evenly flex-wrap mt-14 w-full"
-					initial="hidden"
-					animate={animate ? "visible" : "hidden"}
-					variants={{
-						visible: {
-							transition: {
-								staggerChildren: 0.1,
-							},
-						},
-						hidden: {
-							transition: {
-								staggerChildren: 0.1,
-							},
-						},
-					}}>
-					{questions.map((question, index) => (
-						<motion.p
-							key={question.id}
-							className="bg-green-700 mb-6 text-white py-6 px-4 rounded-xl w-[150px] text-center flex items-center justify-center shadow-2xl cursor-pointer"
-							initial={{ x: -100, opacity: 0 }}
-							animate={{
-								x: animate ? 0 : -100,
-								opacity: animate ? 1 : 0,
-							}}
-							transition={{
-								type: "spring",
-								stiffness: 300,
-								damping: 20,
-								delay: animate ? index * 0.1 : 0,
-							}}
-							onClick={() => handleQuestionClick(question.question)} // Send API request on click
-						>
-							{question.question}
-						</motion.p>
-					))}
-				</motion.div>
-
 				{/* Display the conversation between user and bot */}
-				<div className="conversation-stack flex flex-col overflow-y-scroll mb-6 pt-14 h-[450px]">
+				<div className="conversation-stack flex flex-col overflow-y-scroll mb-6 pt-14 h-[300px]">
 					{conversation.map((message, index) =>
 						message.type === "user" ? (
 							<Sender
@@ -110,8 +80,31 @@ function Choices({ animate }) {
 					<div ref={bottomRef} />
 				</div>
 
+				{/* Display error message if any */}
+				{errorMessage && <p className="text-red-500 text-center mb-4">{errorMessage}</p>}
+
+				{/* Display loading indicator when the bot is processing */}
+				{loading && <p className="text-green-500 text-center mb-4">Bot is thinking...</p>}
+
+				<div>
+					<p className="p-4 font-bold">Frequently Asked Questions</p>
+					<div className="mb-4 overflow-x-auto">
+						<div className="flex flex-row flex-nowrap items-start">
+							{questions.map((question, index) => (
+								<p
+									key={index}
+									className="faq-question bg-green-900 text-white rounded-full mx-2 px-3 py-2 mb-3 whitespace-nowrap cursor-pointer"
+									onClick={() => handleQuestionClick(question.question)} // Send the clicked question
+								>
+									{question.question}
+								</p>
+							))}
+						</div>
+					</div>
+				</div>
+
 				{/* Input field for sending message */}
-				<div className="sticky bottom-4 w-[95%] mx-auto bg-white flex px-1 py-1  border border-green-500 overflow-hidden font-[sans-serif]">
+				<div className="sticky bottom-4 w-[95%] mx-auto bg-white flex px-1 py-1 border border-green-500 rounded-full overflow-hidden font-[sans-serif]">
 					<input
 						type="text"
 						placeholder="Ask me..."
@@ -127,7 +120,7 @@ function Choices({ animate }) {
 						className="bg-white transition-all text-white text-sm px-2 py-2.5"
 						onClick={handleSendMessage} // Send message on click
 					>
-						<SendIcon className="text-green-600"/>
+						<SendIcon className="text-green-600" />
 					</button>
 				</div>
 			</div>

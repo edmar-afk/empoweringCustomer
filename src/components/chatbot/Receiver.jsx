@@ -12,6 +12,9 @@ function Receiver({ botResponse, timeSent }) {
 					<span className="font-semibold text-white">Chatbot -</span>
 					<pre className="text-sm text-white">{botResponse}</pre>
 					{/* <span className="ml-auto text-xs text-white">{timeSent}</span> */}
+
+
+					
 				</div>
 			</div>
 		</>
