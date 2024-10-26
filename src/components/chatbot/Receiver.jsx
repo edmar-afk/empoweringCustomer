@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types *//* eslint-disable react/no-unescaped-entities */
-import SmartToyIcon from "@mui/icons-material/SmartToy";
 
-function Receiver({ botResponse, timeSent }) {
+
+// eslint-disable-next-line no-unused-vars
+function Receiver({ botResponse }) {
 	return (
 		<>
 			<div className="flex items-end gap-2 mb-3 ml-4">

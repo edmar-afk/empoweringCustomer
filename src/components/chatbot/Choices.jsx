@@ -1,9 +1,4 @@
-/* eslint-disable no-unused-vars *//* eslint-disable react/prop-types */
-import { useState, useRef, useEffect } from "react";
-import { questions } from "../../assets/data";
-import api from "../../assets/api";
-import Sender from "../chatbot/Sender";
-import Receiver from "../chatbot/Receiver";
+/* eslint-disable no-unused-vars *//* eslint-disable react/prop-types */import { useState, useRef, useEffect } from "react";import { questions } from "../../assets/data";import api from "../../assets/api";import Sender from "../chatbot/Sender";import Receiver from "../chatbot/Receiver";
 import SendIcon from "@mui/icons-material/Send";
 
 function Choices({ animate }) {
@@ -60,7 +55,22 @@ function Choices({ animate }) {
 		<>
 			<div className="relative">
 				{/* Display the conversation between user and bot */}
-				<div className="conversation-stack flex flex-col overflow-y-scroll mb-6 pt-14 h-[300px]">
+				<div className="conversation-stack flex flex-col overflow-y-scroll mb-6 pt-14 h-[60vh]">
+					<div className="">
+						<p className="p-4 font-bold">Frequently Asked Questions</p>
+						<div className="mb-4 overflow-x-auto">
+							<div className="flex flex-row flex-wrap items-start overflow-x-hidden w-full">
+								{questions.map((question, index) => (
+									<p
+										key={index}
+										className="faq-question break-words text-xs bg-green-900 text-white rounded-full mx-2 px-3 py-2 mb-3 cursor-pointer"
+										onClick={() => handleQuestionClick(question.question)}>
+										{question.question}
+									</p>
+								))}
+							</div>
+						</div>
+					</div>
 					{conversation.map((message, index) =>
 						message.type === "user" ? (
 							<Sender
@@ -85,23 +95,6 @@ function Choices({ animate }) {
 
 				{/* Display loading indicator when the bot is processing */}
 				{loading && <p className="text-green-500 text-center mb-4">Bot is thinking...</p>}
-
-				<div>
-					<p className="p-4 font-bold">Frequently Asked Questions</p>
-					<div className="mb-4 overflow-x-auto">
-						<div className="flex flex-row flex-nowrap items-start">
-							{questions.map((question, index) => (
-								<p
-									key={index}
-									className="faq-question bg-green-900 text-white rounded-full mx-2 px-3 py-2 mb-3 whitespace-nowrap cursor-pointer"
-									onClick={() => handleQuestionClick(question.question)} // Send the clicked question
-								>
-									{question.question}
-								</p>
-							))}
-						</div>
-					</div>
-				</div>
 
 				{/* Input field for sending message */}
 				<div className="sticky bottom-4 w-[95%] mx-auto bg-white flex px-1 py-1 border border-green-500 rounded-full overflow-hidden font-[sans-serif]">

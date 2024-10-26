@@ -3,7 +3,7 @@ function Sender({ userQuestion, timeSent }) {
 	return (
 		<>
 			<div className="flex items-end gap-2 mb-3 mr-4">
-				<div className="ml-auto flex max-w-[95%] flex-col gap-2 rounded-l-xl rounded-tr-xl bg-green-50 p-4 text-sm text-gray-800 break-words">
+				<div className="ml-auto flex w-[80%] flex-col gap-2 rounded-l-xl rounded-tr-xl bg-green-50 p-4 text-sm text-gray-800 break-words">
 					{userQuestion}
 					{/* <span className="ml-auto text-xs">{timeSent}</span> */}
 				</div>
