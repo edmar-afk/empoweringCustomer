@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img1 from "../../assets/img/1.jpeg";
-import img2 from "../../assets/img/2.jpeg";
-import img3 from "../../assets/img/3.jpeg";
-import img4 from "../../assets/img/4.jpeg";
+import img1 from "../../assets/img/Picture1.png";
+import img2 from "../../assets/img/Picture2.png";
+import img3 from "../../assets/img/Picture3.png";
+import img4 from "../../assets/img/Picture4.png";
+import img5 from "../../assets/img/Picture5.png";
+import img6 from "../../assets/img/Picture6.png";
 const images = [
 	{
 		id: 1,
@@ -25,6 +27,16 @@ const images = [
 		src: img4,
 		name: "Image 4",
 	},
+	{
+		id: 5,
+		src: img5,
+		name: "Image 5",
+	},
+	{
+		id: 6,
+		src: img6,
+		name: "Image 6",
+	},
 ];
 
 function HeroCarousel() {
@@ -39,7 +51,7 @@ function HeroCarousel() {
 	}, []);
 
 	return (
-		<div className="relative w-full h-[550px] overflow-hidden">
+		<div className="relative w-full h-[800px] overflow-hidden">
 			<AnimatePresence>
 				{images.map(
 					(image, index) =>
