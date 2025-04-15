@@ -1,4 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */ import HeroCarousel from "./homepage/HeroCarousel";
+/* eslint-disable react/no-unescaped-entities */ import { Link } from "react-router-dom";
+import HeroCarousel from "./homepage/HeroCarousel";
 import StoreOutlinedIcon from "@mui/icons-material/StoreOutlined";
 function Hero() {
 	return (
@@ -15,15 +16,15 @@ function Hero() {
 						</h1>
 						<p className="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24"></p>
 						<div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
-							<div className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 bg-gray-50 rounded-2xl sm:w-auto sm:mb-0">
+							<Link to={'/bigB'} className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0">
 								<StoreOutlinedIcon />
 								BIG B ENTERPRISES
-							</div>
-							<div className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 bg-gray-50 rounded-2xl sm:w-auto sm:mb-0">
+							</Link>
+							<div className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0">
 								<StoreOutlinedIcon />
 								MEJOS STORE
 							</div>
-							<div className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 bg-gray-50 rounded-2xl sm:w-auto sm:mb-0">
+							<div className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0">
 								<StoreOutlinedIcon />
 								Joemar's Triple 8 Grocery
 							</div>

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import NoInterConnection from "./components/NoInternetConnection";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Homepage from "./routes/Homepage";
+import BigbStore from "./routes/BigbStore";
 
 
 function Logout() {
@@ -52,7 +53,10 @@ function App() {
 							path="/"
 							element={<Homepage />}
 						/>
-						
+						<Route
+							path="/bigB"
+							element={<BigbStore />}
+						/>
 						<Route
 							path="/logout"
 							element={<Logout />}

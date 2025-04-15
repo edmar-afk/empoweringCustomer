@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+/* eslint-disable react/prop-types */ import { useState, useRef, useEffect } from "react";
 import { questions, support } from "../../assets/data";
 import api from "../../assets/api";
 import Sender from "../chatbot/Sender";
@@ -6,10 +6,10 @@ import Receiver from "../chatbot/Receiver";
 import SendIcon from "@mui/icons-material/Send";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 
-function Choices({ animate }) {
+function Choices() {
 	const [conversation, setConversation] = useState([]); // Store conversation
 	const [inputMessage, setInputMessage] = useState(""); // Input field state
-	const [loading, setLoading] = useState(false); // Loading state
+	const [, setLoading] = useState(false); // Loading state
 	const [errorMessage, setErrorMessage] = useState(""); // Error message state
 	const [matchedSupport, setMatchedSupport] = useState(null); // Store matched support data
 	const [showMatchedSupport, setShowMatchedSupport] = useState(false); // Toggle matched support display
@@ -88,7 +88,7 @@ function Choices({ animate }) {
 	return (
 		<>
 			<div className="relative">
-				<div className="conversation-stack flex flex-col overflow-y-scroll mb-6 pt-20 h-[60vh]">
+				<div className="conversation-stack flex flex-col overflow-y-scroll mb-6 pt-44 h-[55vh]">
 					{conversation.map((message, index) =>
 						message.type === "user" ? (
 							<Sender
@@ -105,11 +105,13 @@ function Choices({ animate }) {
 						)
 					)}
 
+					
+
 					{showFaqs && (
-						<div className="overflow-y-scroll">
+						<div className="h-44 flex flex-col mt-auto justify-end bg-white">
 							<p className="p-4 font-bold">Frequently Asked Questions</p>
 							<div className="mb-4 overflow-x-auto">
-								<div className="flex flex-row flex-wrap items-start overflow-x-hidden w-full">
+								<div className="flex flex-row flex-wrap items-start overflow-x-hidden w-full overflow-y-scroll">
 									{questions.map((question, index) => (
 										<p
 											key={index}
@@ -122,19 +124,20 @@ function Choices({ animate }) {
 							</div>
 						</div>
 					)}
+
 					<div ref={bottomRef} />
 				</div>
 
 				{errorMessage && <p className="text-red-500 text-center mb-4">{errorMessage}</p>}
 
 				{matchedSupport && showMatchedSupport && (
-					<div className="bg-gray-50 p-4 rounded-lg mt-4 bottom-16 sticky h-44 overflow-y-scroll">
+					<div className="bg-gray-50 p-4 rounded-lg mt-5 bottom-4 sticky h-44 overflow-y-scroll">
 						<div className="flex flex-row justify-between items-center text-gray-600 bg-gray-100 sticky -top-4 pb-4 pt-4">
 							<h4 className="text-xs font-semibold mb-2">You might also ask</h4>
 							<p
 								className="cursor-pointer text-red-600 hover:underline"
 								onClick={handleHideMatchedSupport}>
-								<CancelOutlinedIcon/>
+								<CancelOutlinedIcon />
 							</p>
 						</div>
 						<ul className="list-none ml-6 mt-2 flex justify-start flex-wrap">
