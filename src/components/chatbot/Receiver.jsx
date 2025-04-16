@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types *//* eslint-disable react/no-unescaped-entities */
 import ImageDisplay from "./ImageDisplay";
 import { products } from "../../assets/display";
 
@@ -7,7 +6,8 @@ function Receiver({ botResponse }) {
 	const responseLines = botResponse.split("|").map((line) => line.trim());
 
 	
-	const matchedProduct = products.find((product) => product.triggerQuestion === botResponse);
+	const matchedProduct = products.find((product) => botResponse.includes(product.triggerQuestion));
+
 
 	return (
 		<div className="flex flex-col ml-4 mb-3">
