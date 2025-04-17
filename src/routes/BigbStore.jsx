@@ -1,4 +1,8 @@
-import Heading from "../components/Heading";import Navbar from "../components/Navbar";import ProductsCard from "../components/ProductsCard";import Search from "../components/Search";import Fab from "../components/Fab";
+import Heading from "../components/Heading";
+import Navbar from "../components/Navbar";
+import ProductsCard from "../components/ProductsCard";
+import Search from "../components/Search";
+import Fab from "../components/Fab";
 import bigbvideo from "../assets/videos/bigb.mp4";
 import { products } from "../assets/display";
 

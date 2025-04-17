@@ -1,7 +1,13 @@
-/* eslint-disable react/no-unescaped-entities */ import { Link } from "react-router-dom";
-import HeroCarousel from "./homepage/HeroCarousel";
-import StoreOutlinedIcon from "@mui/icons-material/StoreOutlined";
+/* eslint-disable react/no-unescaped-entities */ import { useState } from "react";import HeroCarousel from "./homepage/HeroCarousel";import StoreOutlinedIcon from "@mui/icons-material/StoreOutlined";
+import BigBModal from "./modals/bigBmodal";
+import MejosModal from "./modals/mejos";
+import JoemarModal from "./modals/joemar";
+
 function Hero() {
+	const [openBigBModal, setOpenBigBModal] = useState(false);
+	const [openMejosModal, setOpenMejosModal] = useState(false);
+	const [openJoemarModal, setOpenJoemarModal] = useState(false);
+
 	return (
 		<>
 			<section className="pt-16 sm:pt-44 bg-white">
@@ -14,22 +20,31 @@ function Hero() {
 							</span>{" "}
 							<span>Smart Chatbots in Support Services</span>
 						</h1>
-						<p className="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24"></p>
+
 						<div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
-							<Link to={'/bigB'} className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0">
+							<div
+								className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0"
+								onClick={() => setOpenBigBModal(true)}>
 								<StoreOutlinedIcon />
 								BIG B ENTERPRISES
-							</Link>
-							<div className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0">
+							</div>
+
+							<div
+								className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0"
+								onClick={() => setOpenMejosModal(true)}>
 								<StoreOutlinedIcon />
 								MEJOS STORE
 							</div>
-							<div className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0">
+
+							<div
+								className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-green-600 hover:text-green-50 bg-green-50 hover:bg-green-700 duration-300 cursor-pointer rounded-2xl sm:w-auto sm:mb-0"
+								onClick={() => setOpenJoemarModal(true)}>
 								<StoreOutlinedIcon />
 								Joemar's Triple 8 Grocery
 							</div>
 						</div>
 					</div>
+
 					<div className="w-full mx-auto mt-20 text-center md:w-10/12">
 						<div className="relative z-0 w-full mt-8">
 							<div className="relative overflow-hidden shadow-2xl">
@@ -46,6 +61,19 @@ function Hero() {
 					</div>
 				</div>
 			</section>
+
+			<BigBModal
+				open={openBigBModal}
+				handleClose={() => setOpenBigBModal(false)}
+			/>
+			<MejosModal
+				open={openMejosModal}
+				handleClose={() => setOpenMejosModal(false)}
+			/>
+			<JoemarModal
+				open={openJoemarModal}
+				handleClose={() => setOpenJoemarModal(false)}
+			/>
 		</>
 	);
 }

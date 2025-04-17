@@ -1,9 +1,4 @@
-import bingocornbeef from "../assets/img/products/cornedbeef/bingoCornedbeef.png";import star from "../assets/img/products/cornedbeef/star.png";import holiday from "../assets/img/products/cornedbeef/holiday.jpg";import argentina from "../assets/img/products/cornedbeef/argentina.jpg";import pureFoods from "../assets/img/products/cornedbeef/pureFoods.jpg";import chilimansi from "../assets/img/products/pancitcanton/chilimansi.jpg";import hotChili from "../assets/img/products/pancitcanton/hotChili.jpg";import kalamansi from "../assets/img/products/pancitcanton/kalamansi.jpg";
-import original from "../assets/img/products/pancitcanton/original.jpg";
-import sweetSpicy from "../assets/img/products/pancitcanton/sweetSpicy.jpg";
-
-const products = [
-	{
+import bingocornbeef from "../assets/img/products/cornedbeef/bingoCornedbeef.png";import star from "../assets/img/products/cornedbeef/star.png";import holiday from "../assets/img/products/cornedbeef/holiday.jpg";import argentina from "../assets/img/products/cornedbeef/argentina.jpg";import pureFoods from "../assets/img/products/cornedbeef/pureFoods.jpg";import chilimansi from "../assets/img/products/pancitcanton/chilimansi.jpg";import hotChili from "../assets/img/products/pancitcanton/hotChili.jpg";import kalamansi from "../assets/img/products/pancitcanton/kalamansi.jpg";import original from "../assets/img/products/pancitcanton/original.jpg";import sweetSpicy from "../assets/img/products/pancitcanton/sweetSpicy.jpg";const products = [	{
 		id: 1,
 		triggerQuestion: "Showing Corned Beef Category",
 		answers: [
@@ -112,6 +107,75 @@ const products = [
 				description: "<b>Big B:</b> ₱110.00<br><b>Joemar's Grocery:</b> ₱115.00<br><b>Mejos Store:</b> ₱120.00",
 				imageUrl:
 					"https://www.colgate.com/content/dam/cp-sites/oral-care/oral-care-center-relaunch/en-in/general/colgate-visible-white/colgate-visible-white-1.png",
+			},
+		],
+	},
+	{
+		id: 4,
+		triggerQuestion: "Showing Soap Category",
+		answers: [
+			{
+				id: 1,
+				productName: "Dove Beauty Bar (100g)",
+				description: "<b>Big B:</b> ₱50.00<br><b>Joemar's Grocery:</b> ₱55.00<br><b>Mejos Store:</b> ₱58.00",
+				imageUrl: "https://medias.watsons.com.ph/publishing/WTCPH-10042993-back-zoom.jpg?version=1720807288",
+			},
+			{
+				id: 2,
+				productName: "Safeguard Pure White Soap (90g)",
+				description: "<b>Big B:</b> ₱30.00<br><b>Joemar's Grocery:</b> ₱33.50<br><b>Mejos Store:</b> ₱36.00",
+				imageUrl:
+					"https://k2pharmacy.ph/cdn/shop/files/SafeguardPurewhite130g_batcheditor_fotor_grande.jpg?v=1730970042",
+			},
+			{
+				id: 3,
+				productName: "Lifebuoy Soap (90g)",
+				description: "<b>Big B:</b> ₱28.00<br><b>Joemar's Grocery:</b> ₱32.00<br><b>Mejos Store:</b> ₱35.00",
+				imageUrl: "https://m.media-amazon.com/images/I/61TzCC94qhL._SL1000_.jpg",
+			},
+			{
+				id: 4,
+				productName: "Pears Transparent Soap (100g)",
+				description: "<b>Big B:</b> ₱40.00<br><b>Joemar's Grocery:</b> ₱43.00<br><b>Mejos Store:</b> ₱46.00",
+				imageUrl: "https://m.media-amazon.com/images/I/71uIUAOJOeL._SL1500_.jpg",
+			},
+			{
+				id: 5,
+				productName: "Human Nature Sunflower Beauty Bar (135g)",
+				description: "<b>Big B:</b> ₱135.00<br><b>Joemar's Grocery:</b> ₱140.00<br><b>Mejos Store:</b> ₱145.00",
+				imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxrAEjz-gl1T5B77Q2EVpIw7ozkWHmuGO6nw&s",
+			},
+			{
+				id: 6,
+				productName: "Olay Moisturizing Bar Soap (90g)",
+				description: "<b>Big B:</b> ₱70.00<br><b>Joemar's Grocery:</b> ₱75.00<br><b>Mejos Store:</b> ₱80.00",
+				imageUrl: "https://m.media-amazon.com/images/I/71MkctR0BMS._SL1500_.jpg",
+			},
+			{
+				id: 7,
+				productName: "Cetaphil Gentle Cleansing Bar Soap (127g)",
+				description: "<b>Big B:</b> ₱195.00<br><b>Joemar's Grocery:</b> ₱210.00<br><b>Mejos Store:</b> ₱220.00",
+				imageUrl:
+					"https://www.cetaphil.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw2b1b1fc0/081828_GC_Bar_4-5oz%20Carton%20-%20front.PNG",
+			},
+			{
+				id: 8,
+				productName: "Palmolive Naturals Soap with Milk (135g)",
+				description: "<b>Big B:</b> ₱60.00<br><b>Joemar's Grocery:</b> ₱65.00<br><b>Mejos Store:</b> ₱70.00",
+				imageUrl:
+					"https://www.palmolive.ph/content/dam/cp-sites/personal-care/palmolive-eu/en_ph/images/bar-soap/palmolive-naturals-white-with-100-percent-natural-milk-protein-bar-soap.jpg",
+			},
+			{
+				id: 9,
+				productName: "Nivea Creme Soap (100g)",
+				description: "<b>Big B:</b> ₱55.00<br><b>Joemar's Grocery:</b> ₱59.00<br><b>Mejos Store:</b> ₱62.00",
+				imageUrl: "https://www.manilagrocerystore.com/images/detailed/7/Nivea_Creme_Soft_Creme_100g.jpg",
+			},
+			{
+				id: 10,
+				productName: "Sunsilk Lush & Smooth Soap (100g)",
+				description: "<b>Big B:</b> ₱45.00<br><b>Joemar's Grocery:</b> ₱50.00<br><b>Mejos Store:</b> ₱53.00",
+				imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHiQfcmizWpDAQbcEcV53tChEl1EJicuSCnA&s",
 			},
 		],
 	},
