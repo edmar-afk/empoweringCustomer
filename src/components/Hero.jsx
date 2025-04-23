@@ -10,7 +10,7 @@ function Hero() {
 
 	return (
 		<>
-			<section className="pt-16 sm:pt-44 bg-white">
+			<section className="pt-32 sm:pt-44 bg-white">
 				<div className="px-4 mx-auto max-w-7xl">
 					<div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
 						<h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
