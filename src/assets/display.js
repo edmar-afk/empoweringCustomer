@@ -1,4 +1,5 @@
-import bingocornbeef from "../assets/img/products/cornedbeef/bingoCornedbeef.png";import star from "../assets/img/products/cornedbeef/star.png";import holiday from "../assets/img/products/cornedbeef/holiday.jpg";import argentina from "../assets/img/products/cornedbeef/argentina.jpg";import pureFoods from "../assets/img/products/cornedbeef/pureFoods.jpg";import chilimansi from "../assets/img/products/pancitcanton/chilimansi.jpg";import hotChili from "../assets/img/products/pancitcanton/hotChili.jpg";import kalamansi from "../assets/img/products/pancitcanton/kalamansi.jpg";import original from "../assets/img/products/pancitcanton/original.jpg";import sweetSpicy from "../assets/img/products/pancitcanton/sweetSpicy.jpg";const products = [	{
+import bingocornbeef from "../assets/img/products/cornedbeef/bingoCornedbeef.png";import star from "../assets/img/products/cornedbeef/star.png";import holiday from "../assets/img/products/cornedbeef/holiday.jpg";import argentina from "../assets/img/products/cornedbeef/argentina.jpg";import pureFoods from "../assets/img/products/cornedbeef/pureFoods.jpg";import chilimansi from "../assets/img/products/pancitcanton/chilimansi.jpg";import hotChili from "../assets/img/products/pancitcanton/hotChili.jpg";import kalamansi from "../assets/img/products/pancitcanton/kalamansi.jpg";import original from "../assets/img/products/pancitcanton/original.jpg";import sweetSpicy from "../assets/img/products/pancitcanton/sweetSpicy.jpg";const products = [
+	{
 		id: 1,
 		triggerQuestion: "Showing Corned Beef Category",
 		answers: [
@@ -176,6 +177,74 @@ import bingocornbeef from "../assets/img/products/cornedbeef/bingoCornedbeef.png
 				productName: "Sunsilk Lush & Smooth Soap (100g)",
 				description: "<b>Big B:</b> ₱45.00<br><b>Joemar's Grocery:</b> ₱50.00<br><b>Mejos Store:</b> ₱53.00",
 				imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHiQfcmizWpDAQbcEcV53tChEl1EJicuSCnA&s",
+			},
+		],
+	},
+	{
+		id: 5,
+		triggerQuestion: "Showing Laundry Soap Category",
+		answers: [
+			{
+				id: 1,
+				productName: "Surf Bar Detergent",
+				description: "<b>Big B:</b> ₱15.00<br><b>Joemar's Grocery:</b> ₱16.00<br><b>Mejos Store:</b> ₱17.00",
+				imageUrl: "https://shopsuki.ph/cdn/shop/files/102063138.jpg?v=1686827265",
+			},
+			{
+				id: 2,
+				productName: "Tide Bar Detergent",
+				description: "<b>Big B:</b> ₱18.00<br><b>Joemar's Grocery:</b> ₱19.00<br><b>Mejos Store:</b> ₱20.00",
+				imageUrl:
+					"https://www.eshopping.com.ph/cdn/shop/products/tide-bar-original-scent-130g-detergent-tide.jpg?v=1617178045",
+			},
+			{
+				id: 3,
+				productName: "Champion Blue Bar",
+				description: "<b>Big B:</b> ₱12.00<br><b>Joemar's Grocery:</b> ₱13.00<br><b>Mejos Store:</b> ₱14.00",
+				imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs6gwUTwxEnEj4EJf1f7AZL_0YIC3hcjD3Zw&s",
+			},
+			{
+				id: 4,
+				productName: "Pride Powerwash Bar",
+				description: "<b>Big B:</b> ₱14.00<br><b>Joemar's Grocery:</b> ₱15.00<br><b>Mejos Store:</b> ₱16.00",
+				imageUrl:
+					"https://media.pickaroo.com/media/thumb/variant_photos/2020/12/22/aUmmNn6dvDXZAwbKDi56Yp_watermark_400.jpg",
+			},
+			{
+				id: 5,
+				productName: "Ariel Bar Detergent",
+				description: "<b>Big B:</b> ₱20.00<br><b>Joemar's Grocery:</b> ₱21.00<br><b>Mejos Store:</b> ₱23.00",
+				imageUrl: "https://shopgaisano.com/cdn/shop/products/4902430191821.jpg?v=1639041775",
+			},
+			{
+				id: 6,
+				productName: "Mr. White Laundry Bar",
+				description: "<b>Big B:</b> ₱10.00<br><b>Joemar's Grocery:</b> ₱11.00<br><b>Mejos Store:</b> ₱12.00",
+				imageUrl: "https://m.media-amazon.com/images/I/71TQ-SVLgEL._AC_UF1000,1000_QL80_.jpg",
+			},
+			{
+				id: 7,
+				productName: "Calla Detergent Bar",
+				description: "<b>Big B:</b> ₱16.00<br><b>Joemar's Grocery:</b> ₱17.00<br><b>Mejos Store:</b> ₱18.00",
+				imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAUw-T5NP4Zy4aLDO_Zkf0zlYcowrHxEs16w&s",
+			},
+			{
+				id: 8,
+				productName: "Perla Laundry Bar White",
+				description: "<b>Big B:</b> ₱22.00<br><b>Joemar's Grocery:</b> ₱24.00<br><b>Mejos Store:</b> ₱25.00",
+				imageUrl: "https://shopsuki.ph/cdn/shop/files/4902430178259_800x.jpg?v=1707362021",
+			},
+			{
+				id: 9,
+				productName: "Wings Detergent Bar",
+				description: "<b>Big B:</b> ₱13.00<br><b>Joemar's Grocery:</b> ₱14.00<br><b>Mejos Store:</b> ₱15.00",
+				imageUrl: "https://shopsuki.ph/cdn/shop/files/107558319_800x.png?v=1715315668",
+			},
+			{
+				id: 10,
+				productName: "Speed Detergent Bar",
+				description: "<b>Big B:</b> ₱11.00<br><b>Joemar's Grocery:</b> ₱12.00<br><b>Mejos Store:</b> ₱13.00",
+				imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2BHaOw3vdzCHcpN7yKFmyhDwlyqHfoh2jaw&s",
 			},
 		],
 	},
